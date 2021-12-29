@@ -1,0 +1,20 @@
+<!--Sign In Page--->
+<!--CSS used in this file also share with Sign Up Page-->
+<section class="form-auth text-center">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <!--  <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <%= f.email_field :email, autofocus: true, class: "form-control", id: "inputEmail", placeholder: "Email address", autocomplete: "current-email" %>
+
+    <label for="inputPassword" class="sr-only">Password</label>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "form-control", id: "inputPassword" %>
+    <!--    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
+    <%= f.submit "Login", class: "btn btn-lg btn-primary btn-block" %>
+    <p class="mt-5 mb-3 text-muted">© 2017-2019 hmm</p>
+  <% end %>
+
+
+  <%= render "devise/shared/links" %>
+</section>

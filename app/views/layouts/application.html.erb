@@ -12,8 +12,10 @@
 
   </head>
 
-  <body>
-  <% if ["public, devise"].include?(controller.controller_name) %>
+  <!--Style depend on what controller is in use? o.O-->
+  <body id="<%= controller.controller_name %>" class="<%= controller.action_name %>">
+  <!--This line below is for authentication purposes....still don't really understand why I need it-->
+  <% if ["public", "devise", "sessions"].include?(controller.controller_name) %>
     <head>
       <%= render "/layouts/nav/public" %>
       <%= yield %>

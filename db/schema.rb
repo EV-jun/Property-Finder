@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_29_155338) do
+ActiveRecord::Schema.define(version: 2021_12_29_203407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2021_12_29_155338) do
   end
 
   create_table "properties", force: :cascade do |t|
-    t.bigint "account_id"
     t.string "name"
     t.string "address"
     t.integer "price"
@@ -49,7 +48,6 @@ ActiveRecord::Schema.define(version: 2021_12_29_155338) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_properties_on_account_id"
   end
 
 end

@@ -1,10 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Properties</h1>
+<h3>Properties</h3>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Price</th>
+      <th>Rooms</th>
+      <th>Bathrooms</th>
+      <th>Photo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +18,12 @@
   <tbody>
     <% @properties.each do |property| %>
       <tr>
+        <td><%= property.name %></td>
+        <td><%= property.address %></td>
+        <td><%= property.price %></td>
+        <td><%= property.rooms %></td>
+        <td><%= property.bathrooms %></td>
+        <td><%= property.photo %></td>
         <td><%= link_to 'Show', property %></td>
         <td><%= link_to 'Edit', edit_property_path(property) %></td>
         <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
